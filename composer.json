@@ -1,0 +1,19 @@
+{
+    "name": "hexlet/code",
+    "description": "hexlet project",
+    "type": "project",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TolIkUshkevich",
+            "email": "104827125+TolIkUshkevich@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {}
+}
