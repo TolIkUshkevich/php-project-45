@@ -15,5 +15,8 @@
         }
     ],
     "minimum-stability": "alpha",
-    "require": {}
+    "require": {},
+    "bin": [
+        "bin/brain-games"
+    ]
 }
