@@ -1,4 +1,9 @@
 start-project:
 	composer install
-    ./bin/brain-games
 	composer validate
+
+lint:
+	composer exec --verbose phpcs -- --standard=PSR12 src bin
+
+start-game:
+	./bin/brain-games
