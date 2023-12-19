@@ -1,3 +1,8 @@
 #!/usr/bin/env php
 <?php
-echo "Welcome to the Brain Games!" . "\n";
+
+require_once "./vendor/autoload.php";
+
+use BrainGames\Cli;
+
+print_r(Cli\askName());
