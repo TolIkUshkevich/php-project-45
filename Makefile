@@ -7,3 +7,6 @@ lint:
 
 start-game:
 	./bin/brain-games
+
+brain-calc:
+	./bin/brain-calc

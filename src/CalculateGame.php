@@ -7,37 +7,40 @@ use BrainGames\Cli;
 use function cli\line;
 use function cli\prompt;
 
-function mines($firstNumber, $secondNumber){
-    line("$firstNumber - $secondNumber");
-    return $firstNumber - $secondNumber;
-}
-
-function plus($firstNumber, $secondNumber){
-    line("$firstNumber + $secondNumber");
-    return $firstNumber + $secondNumber;
-}
-
-function multiply($firstNumber, $secondNumber){
-    line("$firstNumber * $secondNumber");
-    return $firstNumber * $secondNumber;
-}
-
 function CalculateGame()
 {
-    $firstNumber = rand(0, 20);
-    $secondNumber = rand(0, 20);
-    $symbols = [
-        1 => mines($firstNumber, $secondNumber),
-        2 => plus($firstNumber, $secondNumber),
-        3 => multiply($firstNumber, $secondNumber)
-    ];
     $name = Cli\askName();
-    line("Hello, %s!", $name);
+    line("Hello, {$name}");
     line('What is the result of the expression?');
+    $symbolNumber = 0;
     for ($i = 0; $i < 3; $i++) {
-        $symbolNumber = rand(1, 3);
-        print_r($symbols[$symbolNumber]);
+        $firstNumber = rand(0, 20);
+        $secondNumber = rand(0, 20);
+        $symbols = [
+            "{$firstNumber} - {$secondNumber}",
+            "{$firstNumber} + {$secondNumber}",
+            "{$firstNumber} * {$secondNumber}"
+        ];
+        $answeres = [
+            $firstNumber - $secondNumber,
+            $firstNumber + $secondNumber,
+            $firstNumber * $secondNumber
+        ];
+        print_r("Question: " . $symbols[$symbolNumber] . "\n");
+        $answer = prompt("Your answer: ");
+        $correctAnswer = $answeres[$symbolNumber];
+        if ($answer != $correctAnswer) {
+            line("\"{$answer}\" is wrong answer ;(. Correct answer was \"{$correctAnswer}\".");
+            line("Let's try again, {$name}");
+            break;
+        }
+        else {
+            line("Correct!");
+            $symbolNumber++;
+            if ($i == 2){
+                line("Congratulations, {$name}!");
+            }
+            continue;
+        }
     }
 }
-
-CalculateGame();
