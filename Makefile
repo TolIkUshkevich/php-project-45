@@ -10,3 +10,12 @@ start-game:
 
 brain-calc:
 	./bin/brain-calc
+
+brain-even:
+	./bin/brain-even
+
+brain-gcd:
+	./bin/brain-gcd
+
+load:
+	composer dump-autoload

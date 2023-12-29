@@ -10,7 +10,8 @@
         "files": [
             "src/Cli.php",
             "src/CheckGame.php",
-            "src/CalculateGame.php"
+            "src/CalculateGame.php",
+            "src/GcdGame.php"
         ]
     },
     "authors": [
@@ -26,7 +27,8 @@
     "bin": [
         "bin/brain-games",
         "bin/brain-calc",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-gcd"
     ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.8"
