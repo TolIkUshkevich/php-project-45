@@ -17,5 +17,8 @@ brain-even:
 brain-gcd:
 	./bin/brain-gcd
 
+brain-progression:
+	./bin/brain-progression
+
 load:
 	composer dump-autoload
