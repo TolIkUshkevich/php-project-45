@@ -10,7 +10,6 @@ use function cli\prompt;
 function CalculateGame()
 {
     $name = Cli\askName();
-    line("Hello, {$name}");
     line('What is the result of the expression?');
     $symbolNumber = 0;
     for ($i = 0; $i < 3; $i++) {
@@ -27,7 +26,7 @@ function CalculateGame()
             $firstNumber * $secondNumber
         ];
         print_r("Question: " . $symbols[$symbolNumber] . "\n");
-        $answer = prompt("Your answer: ");
+        $answer = prompt("Your answer");
         $correctAnswer = $answeres[$symbolNumber];
         if ($answer != $correctAnswer) {
             line("\"{$answer}\" is wrong answer ;(. Correct answer was \"{$correctAnswer}\".");

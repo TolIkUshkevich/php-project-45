@@ -8,5 +8,4 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use BrainGames\Cli;
 use function cli\line;
 
-line('Welcome to the Brain Game!');
 print_r(Cli\askName());
