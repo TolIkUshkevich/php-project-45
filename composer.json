@@ -8,6 +8,7 @@
             "BrainGames\\Cli\\": "src/"
         },
         "files": [
+            "src/Engine.php",
             "src/Cli.php",
             "src/CheckGame.php",
             "src/CalculateGame.php",

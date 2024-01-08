@@ -2,9 +2,11 @@
 
 namespace Braingames\ProgressionGame;
 
+use BrainGames\Cli;
+use BrainGames\Engine;
+
 use function cli\line;
 use function cli\prompt;
-use BrainGames\Cli;
 
 function ProgressionGame(){
     $name = Cli\askName();
@@ -28,7 +30,7 @@ function ProgressionGame(){
             }
         }
         else{
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            Engine\printWrongAnswer($answer, $correctAnswer);
             line("Let's try again, Sam!");
             break;
         }

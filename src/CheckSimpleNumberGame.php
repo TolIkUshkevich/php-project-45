@@ -3,6 +3,7 @@
 namespace BrainGames\SimpleNumberGame;
 
 use BrainGames\Cli;
+use BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
@@ -21,22 +22,19 @@ function CheckSimpleNumberGame(){
     $name = Cli\askName();
     line("Hello, %s!", $name);
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 1; $i <= 3; $i++) {
         $number = rand(0, 100);
         line("Question: {$number}");
         $correctAnswer = CheckIfSimple($number);
-        $answer = prompt('Your answer');
+        $answer = Engine\getAnswer();
         if ($answer != $correctAnswer) {
-            line("\"{$answer}\" is wrong answer ;(. Correct answer was \"{$correctAnswer}\".");
-            line("Let's try again, {$name}");
+            Engine\printWrongAnswer($answer, $correctAnswer);
+            Engine\sayTryAgain($name);
             break;
         }
-        else {
-            line("Correct!");
-            if ($i == 2){
-                line("Congratulations, {$name}!");
-            }
-            continue;
+            Engine\sayCorrect();
+            if ($i === 3){
+                Engine\endGame($name);
         }
     }
 }

@@ -2,9 +2,11 @@
 
 namespace Braingames\GcdGame;
 
+use BrainGames\Cli;
+use BrainGames\Engine;
+
 use function cli\line;
 use function cli\prompt;
-use BrainGames\Cli;
 
 function gcdGame(){
     $name = Cli\askName();
@@ -15,16 +17,15 @@ function gcdGame(){
         line("Question: {$firstNumber} {$secondNumber}");
         $correctAnswer = gmp_gcd($firstNumber, $secondNumber);
         $answer = prompt("Your answer");
-        if ($answer == $correctAnswer){
-            line("Correct!");
-            if ($i == 2){
-                line("Congratulations, {$name}!");
-            }
-        }
-        else{
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
-            line("Let's try again, Sam!");
+        if ($answer !== $correctAnswer){
+            Engine\printWrongAnswer($answer, $correctAnswer);
+            line("Let's try again, {$name}!");
             break;
+        }
+
+        line("Correct!");
+        if ($i == 2){
+            line("Congratulations, {$name}!");
         }
     }
 }
