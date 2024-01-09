@@ -3,6 +3,7 @@
 namespace BrainGames\Games\CheckGame;
 
 use BrainGames\Engine;
+
 use function cli\line;
 
 function checkNumberGame()
