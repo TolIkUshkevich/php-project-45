@@ -26,7 +26,6 @@ function game($massage, $questions, $correctAnswers)
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, {$name}");
-    return $name;
     line($massage);
     for ($i = 0; $i < 3; $i++) {
         $question = $questions[$i];
