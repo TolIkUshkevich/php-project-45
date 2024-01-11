@@ -4,17 +4,14 @@
     "type": "project",
     "license": "mit",
     "autoload": {
-        "psr-4": {
-            "BrainGames\\Cli\\": "src/"
-        },
         "files": [
-            "src/Engine.php",
-            "src/Cli.php",
-            "src/CheckGame.php",
-            "src/CalculateGame.php",
-            "src/GcdGame.php",
-            "src/ProgressionGame.php",
-            "src/CheckSimpleNumberGame.php"
+            "src/Games/Engine.php",
+            "src/Games/Cli.php",
+            "src/Games/CheckGame.php",
+            "src/Games/CalculateGame.php",
+            "src/Games/GcdGame.php",
+            "src/Games/ProgressionGame.php",
+            "src/Games/CheckSimpleNumberGame.php"
         ]
     },
     "authors": [

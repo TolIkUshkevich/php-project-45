@@ -6,4 +6,4 @@ require_once "./vendor/autoload.php";
 use BrainGames\CalculateGame;
 use function cli\line;
 
-print_r(CalculateGame\CalculateGame());
+CalculateGame\CalculateGame();

@@ -1,11 +1,9 @@
 #!/usr/bin/env php
 <?php
-//print_r(__DIR__ . "../vendor/autoload.php" . "\n");
-//die;
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
 use BrainGames\Cli;
 use function cli\line;
 
-print_r(Cli\askName());
+Cli\askName();
