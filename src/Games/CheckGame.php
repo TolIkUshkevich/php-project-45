@@ -4,8 +4,6 @@ namespace BrainGames\Games\CheckGame;
 
 use BrainGames\Engine;
 
-use function cli\line;
-
 function checkNumberGame()
 {
     $massage = 'Answer "yes" if the number is even, otherwise answer "no".';

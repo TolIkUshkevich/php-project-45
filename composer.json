@@ -5,7 +5,7 @@
     "license": "mit",
     "autoload": {
         "files": [
-            "src/Games/Engine.php",
+            "src/Engine.php",
             "src/Games/Cli.php",
             "src/Games/CheckGame.php",
             "src/Games/CalculateGame.php",
