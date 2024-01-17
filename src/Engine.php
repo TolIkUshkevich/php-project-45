@@ -10,15 +10,22 @@ function checkIfEven($number): bool
     return $number % 2 === 0;
 }
 
-function CheckIfSimple($inputNumber)
+function GetPrimeNumbers($inputNumber)
 {
-    $total_divisors = 0;
-    for ($i = 1; $i <= $inputNumber; $i++) {
-        if ($inputNumber % $i == 0) {
-            $total_divisors++;
+    $primeMassive = [2];
+    $counter = 0;
+    for ($i = 3; $i <= $inputNumber; $i++) {
+        for ($j = 2; $j <= 100; $j++) {
+            if ($i % $j == 0) {
+                $counter++;
+            }
         }
+        if ($counter == 1) {
+            $primeMassive[] = $i;
+        }
+        $counter = 0;
     }
-    return $total_divisors == 2 ? true : false;
+    return $primeMassive;
 }
 
 function game($massage, $questions, $correctAnswers)
