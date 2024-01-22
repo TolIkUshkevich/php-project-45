@@ -11,7 +11,7 @@ use function cli\prompt;
 
 function CheckSimpleNumberGame()
 {
-    $massage = 'Answer "yes" if the number is prime. Otherwise answer "no".';
+    $massage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $questions = [];
     $correctAnswers = [];
     $primeMassive = Engine\GetPrimeNumbers(100);
