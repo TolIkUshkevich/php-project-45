@@ -38,7 +38,7 @@ function getMaxDivisior($firstNumber, $secondNumber)
         $max = $secondNumber;
     }
 
-    for ($i = 1; $i < $max; $i++) {
+    for ($i = 1; $i <= $max; $i++) {
         if ($firstNumber % $i === 0 and $secondNumber % $i === 0) {
             $maxDivisior = $i;
         }
