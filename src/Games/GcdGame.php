@@ -18,7 +18,7 @@ function gcdGame()
         $firstNumber = rand(1, 25);
         $secondNumber = rand(1, 25);
         $questions[] = "{$firstNumber} {$secondNumber}";
-        $correctAnswers[] = gmp_gcd($firstNumber, $secondNumber);
+        $correctAnswers[] = Engine\getMaxDivisior($firstNumber, $secondNumber);
     }
     Engine\game($massege, $questions, $correctAnswers);
 }

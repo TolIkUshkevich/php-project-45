@@ -28,6 +28,24 @@ function GetPrimeNumbers($inputNumber)
     return $primeMassive;
 }
 
+function getMaxDivisior($firstNumber, $secondNumber)
+{
+    $maxDivisior = 0;
+
+    if ($firstNumber >= $secondNumber) {
+        $max = $firstNumber;
+    } else {
+        $max = $secondNumber;
+    }
+
+    for ($i = 1; $i < $max; $i++) {
+        if ($firstNumber % $i === 0 and $secondNumber % $i === 0) {
+            $maxDivisior = $i;
+        }
+    }
+    return $maxDivisior;
+}
+
 function game($massage, $questions, $correctAnswers)
 {
     line('Welcome to the Brain Games!');
