@@ -11,8 +11,8 @@ function checkNumberGame()
     $correctAnswers = [];
     for ($i = Engine\FIRSTROUNDNUMBER; $i <= Engine\GAMEROUNDSNUMBER; $i++) {
         $number = rand(0, 100);
-        $questions[] = $number;
-        $correctAnswers[] = Engine\checkIfEven($number) ? 'yes' : 'no';
+        $questions[$i] = $number;
+        $correctAnswers[$i] = Engine\checkIfEven($number) ? 'yes' : 'no';
     }
     Engine\Game($massage, $questions, $correctAnswers);
 }

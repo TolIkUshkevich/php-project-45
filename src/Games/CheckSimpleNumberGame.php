@@ -17,8 +17,8 @@ function CheckSimpleNumberGame()
     $primeMassive = Engine\GetPrimeNumbers(100);
     for ($i = Engine\FIRSTROUNDNUMBER; $i <= Engine\GAMEROUNDSNUMBER; $i++) {
         $number = rand(0, 100);
-        $questions[] = $number;
-        $correctAnswers[] = in_array($number, $primeMassive) ? 'yes' : 'no';
+        $questions[$i] = $number;
+        $correctAnswers[$i] = in_array($number, $primeMassive) ? 'yes' : 'no';
     }
     Engine\Game($massage, $questions, $correctAnswers);
 }

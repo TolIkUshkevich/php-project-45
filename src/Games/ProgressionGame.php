@@ -21,9 +21,9 @@ function ProgressionGame()
         for ($j = 0; $j < 10; $j++) {
             $progression[] = $progressionIndex * $j + $startNumber;
         }
-        $correctAnswers[] = $progression[$missedNumberIndex];
+        $correctAnswers[$i] = $progression[$missedNumberIndex];
         $progression[$missedNumberIndex] = '..';
-        $questions[] = implode(' ', $progression);
+        $questions[$i] = implode(' ', $progression);
     }
     Engine\game($massege, $questions, $correctAnswers);
 }
