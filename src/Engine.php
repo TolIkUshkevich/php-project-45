@@ -49,7 +49,7 @@ function getMaxDivisior(int $firstNumber, int $secondNumber): int
     return $maxDivisior;
 }
 
-function game(string $massage,array $questions,array $correctAnswers)
+function game(string $massage, array $questions, array $correctAnswers)
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
