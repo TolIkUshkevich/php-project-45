@@ -29,3 +29,6 @@ brain-prime:
 
 load:
 	composer dump-autoload
+
+lint-fix:
+    composer exec --verbose phpcbf -- --standard=PSR12 --colors src bin

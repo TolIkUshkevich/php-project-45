@@ -2,7 +2,8 @@
 [![Actions Status](https://github.com/TolIkUshkevich/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/TolIkUshkevich/php-project-45/actions)
 
 ## What is this project actually about?
-This is a selection of simple mathematics games
+This is a selection of simple mathematics games.
+Play, enjoy, count.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/18cb5c5db817bbd6e2c1/maintainability)](https://codeclimate.com/github/TolIkUshkevich/php-project-45/maintainability)  
 

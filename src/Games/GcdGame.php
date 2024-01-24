@@ -14,7 +14,7 @@ function gcdGame()
     $massege = "Find the greatest common divisor of given numbers.";
     $questions = [];
     $correctAnswers = [];
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = Engine\FIRSTROUNDNUMBER; $i <= Engine\GAMEROUNDSNUMBER; $i++) {
         $firstNumber = rand(1, 25);
         $secondNumber = rand(1, 25);
         $questions[] = "{$firstNumber} {$secondNumber}";

@@ -13,7 +13,7 @@ function ProgressionGame()
     $massege = "What number is missing in the progression?";
     $questions = [];
     $correctAnswers = [];
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = Engine\FIRSTROUNDNUMBER; $i <= Engine\GAMEROUNDSNUMBER; $i++) {
         $progressionIndex = rand(1, 5);
         $missedNumberIndex = rand(0, 9);
         $startNumber = rand(0, 20);

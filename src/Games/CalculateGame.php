@@ -4,6 +4,7 @@ namespace BrainGames\CalculateGame;
 
 use BrainGames\Cli;
 use BrainGames\Engine;
+use Random\Engine as RandomEngine;
 
 use function cli\line;
 use function cli\prompt;
@@ -18,7 +19,7 @@ function CalculateGame()
         '-',
         '*'
     ];
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = Engine\FIRSTROUNDNUMBER; $i <= Engine\GAMEROUNDSNUMBER; $i++) {
         $firstNumber = rand(1, 20);
         $secondNumber = rand(1, 20);
         $questions[] = "{$firstNumber} {$symbols[$i]} {$secondNumber}";

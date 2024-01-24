@@ -5,12 +5,15 @@ namespace BrainGames\Engine;
 use function Cli\line;
 use function Cli\prompt;
 
-function checkIfEven($number): bool
+const GAMEROUNDSNUMBER = 3;
+const FIRSTROUNDNUMBER = 1;
+
+function checkIfEven(int $number): bool
 {
     return $number % 2 === 0;
 }
 
-function GetPrimeNumbers($inputNumber)
+function GetPrimeNumbers(int $inputNumber): array
 {
     $primeMassive = [2];
     $counter = 0;
@@ -28,7 +31,7 @@ function GetPrimeNumbers($inputNumber)
     return $primeMassive;
 }
 
-function getMaxDivisior($firstNumber, $secondNumber)
+function getMaxDivisior(int $firstNumber, int $secondNumber): int
 {
     $maxDivisior = 0;
 
@@ -46,13 +49,13 @@ function getMaxDivisior($firstNumber, $secondNumber)
     return $maxDivisior;
 }
 
-function game($massage, $questions, $correctAnswers)
+function game(string $massage,array $questions,array $correctAnswers)
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, {$name}");
     line($massage);
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < GAMEROUNDSNUMBER; $i++) {
         $question = $questions[$i];
         line("Question: {$question}");
         $answer = prompt('Your answer');
