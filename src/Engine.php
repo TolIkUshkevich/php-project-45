@@ -55,7 +55,7 @@ function game(string $massage,array $questions,array $correctAnswers)
     $name = prompt('May I have your name?');
     line("Hello, {$name}");
     line($massage);
-    for ($i = 0; $i < GAMEROUNDSNUMBER; $i++) {
+    for ($i = FIRSTROUNDNUMBER; $i <= GAMEROUNDSNUMBER; $i++) {
         $question = $questions[$i];
         line("Question: {$question}");
         $answer = prompt('Your answer');
@@ -67,7 +67,7 @@ function game(string $massage,array $questions,array $correctAnswers)
         }
 
         line("Correct!");
-        if ($i === 2) {
+        if ($i === GAMEROUNDSNUMBER) {
             line("Congratulations, %s!", $name);
         }
     }
