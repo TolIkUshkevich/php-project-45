@@ -2,12 +2,7 @@
 
 namespace Braingames\GcdGame;
 
-use BrainGames\Cli;
 use BrainGames\Engine;
-use Random\Engine as RandomEngine;
-
-use function cli\line;
-use function cli\prompt;
 
 function gcdGame()
 {

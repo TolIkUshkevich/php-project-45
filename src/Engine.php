@@ -2,8 +2,8 @@
 
 namespace BrainGames\Engine;
 
-use function Cli\line;
-use function Cli\prompt;
+use function cli\line;
+use function cli\prompt;
 
 const GAMEROUNDSNUMBER = 3;
 const FIRSTROUNDNUMBER = 1;
@@ -13,7 +13,7 @@ function checkIfEven(int $number): bool
     return $number % 2 === 0;
 }
 
-function GetPrimeNumbers(int $inputNumber): array
+function getPrimeNumbers(int $inputNumber): array
 {
     $primeMassive = [2];
     $counter = 0;

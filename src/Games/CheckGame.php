@@ -14,5 +14,5 @@ function checkNumberGame()
         $questions[$i] = $number;
         $correctAnswers[$i] = Engine\checkIfEven($number) ? 'yes' : 'no';
     }
-    Engine\Game($massage, $questions, $correctAnswers);
+    Engine\game($massage, $questions, $correctAnswers);
 }

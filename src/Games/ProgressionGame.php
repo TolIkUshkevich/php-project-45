@@ -2,11 +2,7 @@
 
 namespace Braingames\ProgressionGame;
 
-use BrainGames\Cli;
 use BrainGames\Engine;
-
-use function cli\line;
-use function cli\prompt;
 
 function ProgressionGame()
 {

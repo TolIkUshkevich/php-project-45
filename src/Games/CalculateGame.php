@@ -2,12 +2,7 @@
 
 namespace BrainGames\CalculateGame;
 
-use BrainGames\Cli;
 use BrainGames\Engine;
-use Random\Engine as RandomEngine;
-
-use function cli\line;
-use function cli\prompt;
 
 function CalculateGame()
 {
@@ -25,5 +20,5 @@ function CalculateGame()
         $questions[$i] = "{$firstNumber} {$symbols[$i]} {$secondNumber}";
         $correctAnswers[$i] = eval('return ' . $questions[$i] . ';');
     }
-    Engine\Game($massage, $questions, $correctAnswers);
+    Engine\game($massage, $questions, $correctAnswers);
 }
