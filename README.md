@@ -1,11 +1,11 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/TolIkUshkevich/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/TolIkUshkevich/php-project-45/actions)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/18cb5c5db817bbd6e2c1/maintainability)](https://codeclimate.com/github/TolIkUshkevich/php-project-45/maintainability)
+
 ## What is this project actually about?
 This is a selection of simple mathematics games.
 Play, enjoy, count.
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/18cb5c5db817bbd6e2c1/maintainability)](https://codeclimate.com/github/TolIkUshkevich/php-project-45/maintainability)  
 
 #### brain-even game:  
 [![asciicast](https://asciinema.org/a/CHaHgxNmZMFinMpzFdar7F0Kj.svg)](https://asciinema.org/a/CHaHgxNmZMFinMpzFdar7F0Kj)
