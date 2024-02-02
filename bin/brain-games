@@ -4,6 +4,5 @@
 require_once __DIR__ . "/../vendor/autoload.php";
 
 use BrainGames\Cli;
-use function cli\line;
 
 Cli\askName();

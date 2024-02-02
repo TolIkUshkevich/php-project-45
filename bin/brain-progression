@@ -3,6 +3,6 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use BrainGames\ProgressionGame;
+use BrainGames\Games\BrainProgression;
 
-ProgressionGame\ProgressionGame();
+BrainProgression\brainProgression();

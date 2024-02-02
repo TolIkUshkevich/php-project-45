@@ -1,15 +1,15 @@
 <?php
 
-namespace Braingames\ProgressionGame;
+namespace BrainGames\Games\BrainProgression;
 
 use BrainGames\Engine;
 
-function ProgressionGame()
+function brainProgression()
 {
     $massege = "What number is missing in the progression?";
     $questions = [];
     $correctAnswers = [];
-    for ($i = Engine\FIRSTROUNDNUMBER; $i <= Engine\GAMEROUNDSNUMBER; $i++) {
+    for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
         $progressionIndex = rand(1, 5);
         $missedNumberIndex = rand(0, 9);
         $startNumber = rand(0, 20);

@@ -1,18 +1,23 @@
 <?php
 
-namespace BrainGames\Games\CheckGame;
+namespace BrainGames\Games\BrainEven;
 
 use BrainGames\Engine;
 
-function checkNumberGame()
+function checkIfEven(int $number): bool
+{
+    return $number % 2 === 0;
+}
+
+function brainEven()
 {
     $massage = 'Answer "yes" if the number is even, otherwise answer "no".';
     $questions = [];
     $correctAnswers = [];
-    for ($i = Engine\FIRSTROUNDNUMBER; $i <= Engine\GAMEROUNDSNUMBER; $i++) {
+    for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
         $number = rand(0, 100);
         $questions[$i] = $number;
-        $correctAnswers[$i] = Engine\checkIfEven($number) ? 'yes' : 'no';
+        $correctAnswers[$i] = checkIfEven($number) ? 'yes' : 'no';
     }
     Engine\game($massage, $questions, $correctAnswers);
 }

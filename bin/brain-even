@@ -3,6 +3,6 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use BrainGames\Games\CheckGame;
+use BrainGames\Games\BrainEven;
 
-CheckGame\checkNumberGame();
+BrainEven\brainEven();
