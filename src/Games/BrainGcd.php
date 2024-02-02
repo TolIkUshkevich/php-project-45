@@ -31,7 +31,7 @@ function brainGcd()
         $firstNumber = rand(1, 25);
         $secondNumber = rand(1, 25);
         $questions[$i] = "{$firstNumber} {$secondNumber}";
-        $correctAnswers[$i] = getMaxDivisior($firstNumber, $secondNumber);
+        $correctAnswers[$i] = getMaxDivider($firstNumber, $secondNumber);
     }
     Engine\game($message, $questions, $correctAnswers);
 }
