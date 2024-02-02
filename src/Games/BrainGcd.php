@@ -4,9 +4,9 @@ namespace BrainGames\Games\BrainGcd;
 
 use BrainGames\Engine;
 
-function getMaxDivisior(int $firstNumber, int $secondNumber): int
+function getMaxDivider(int $firstNumber, int $secondNumber): int
 {
-    $maxDivisior = 0;
+    $maxDivider = 0;
 
     if ($firstNumber >= $secondNumber) {
         $max = $firstNumber;
@@ -16,15 +16,15 @@ function getMaxDivisior(int $firstNumber, int $secondNumber): int
 
     for ($i = 1; $i <= $max; $i++) {
         if ($firstNumber % $i === 0 and $secondNumber % $i === 0) {
-            $maxDivisior = $i;
+            $maxDivider = $i;
         }
     }
-    return $maxDivisior;
+    return $maxDivider;
 }
 
 function brainGcd()
 {
-    $massege = "Find the greatest common divisor of given numbers.";
+    $message = "Find the greatest common divisor of given numbers.";
     $questions = [];
     $correctAnswers = [];
     for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
@@ -33,5 +33,5 @@ function brainGcd()
         $questions[$i] = "{$firstNumber} {$secondNumber}";
         $correctAnswers[$i] = getMaxDivisior($firstNumber, $secondNumber);
     }
-    Engine\game($massege, $questions, $correctAnswers);
+    Engine\game($message, $questions, $correctAnswers);
 }

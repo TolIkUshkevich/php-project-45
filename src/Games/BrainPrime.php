@@ -6,7 +6,7 @@ use BrainGames\Engine;
 
 function getPrimeNumbers(int $inputNumber): array
 {
-    $primeMassive = [2];
+    $arrayOfPrimeNumbers = [2];
     $counter = 0;
     for ($i = 3; $i <= $inputNumber; $i++) {
         for ($j = 2; $j <= 100; $j++) {
@@ -15,16 +15,16 @@ function getPrimeNumbers(int $inputNumber): array
             }
         }
         if ($counter === 1) {
-            $primeMassive[] = $i;
+            $arrayOfPrimeNumbers[] = $i;
         }
         $counter = 0;
     }
-    return $primeMassive;
+    return $arrayOfPrimeNumbers;
 }
 
 function brainPrime()
 {
-    $massage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    $message = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $questions = [];
     $correctAnswers = [];
     $primeMassive = getPrimeNumbers(100);
@@ -33,5 +33,5 @@ function brainPrime()
         $questions[$i] = $number;
         $correctAnswers[$i] = in_array($number, $primeMassive, true) ? 'yes' : 'no';
     }
-    Engine\game($massage, $questions, $correctAnswers);
+    Engine\game($message, $questions, $correctAnswers);
 }

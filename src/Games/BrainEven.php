@@ -11,7 +11,7 @@ function checkIfEven(int $number): bool
 
 function brainEven()
 {
-    $massage = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $message = 'Answer "yes" if the number is even, otherwise answer "no".';
     $questions = [];
     $correctAnswers = [];
     for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
@@ -19,5 +19,5 @@ function brainEven()
         $questions[$i] = $number;
         $correctAnswers[$i] = checkIfEven($number) ? 'yes' : 'no';
     }
-    Engine\game($massage, $questions, $correctAnswers);
+    Engine\game($message, $questions, $correctAnswers);
 }

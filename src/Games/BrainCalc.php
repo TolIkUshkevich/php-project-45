@@ -6,7 +6,7 @@ use BrainGames\Engine;
 
 function brainCalc()
 {
-    $massage = 'What is the result of the expression?';
+    $message = 'What is the result of the expression?';
     $questions = [];
     $correctAnswers = [];
     $symbols = [
@@ -32,5 +32,5 @@ function brainCalc()
         }
         unset($symbols[$symbolNumber]);
     }
-    Engine\game($massage, $questions, $correctAnswers);
+    Engine\game($message, $questions, $correctAnswers);
 }

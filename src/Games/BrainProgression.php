@@ -21,5 +21,5 @@ function brainProgression()
         $progression[$missedNumberIndex] = '..';
         $questions[$i] = implode(' ', $progression);
     }
-    Engine\game($massege, $questions, $correctAnswers);
+    Engine\game($message, $questions, $correctAnswers);
 }
