@@ -6,7 +6,7 @@ use BrainGames\Engine;
 
 function brainProgression()
 {
-    $massege = "What number is missing in the progression?";
+    $message = "What number is missing in the progression?";
     $questions = [];
     $correctAnswers = [];
     for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {

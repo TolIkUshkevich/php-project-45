@@ -8,12 +8,12 @@ use function cli\prompt;
 const GAME_ROUNDS_NUMBER = 3;
 const FIRST_ROUND_NUMBER = 1;
 
-function game(string $massage, array $questions, array $correctAnswers)
+function game(string $message, array $questions, array $correctAnswers)
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, {$name}");
-    line($massage);
+    line($message);
     for ($i = FIRST_ROUND_NUMBER; $i <= GAME_ROUNDS_NUMBER; $i++) {
         $question = $questions[$i];
         line("Question: {$question}");
