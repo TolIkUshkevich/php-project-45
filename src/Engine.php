@@ -8,7 +8,11 @@ use function cli\prompt;
 const GAME_ROUNDS_NUMBER = 3;
 const FIRST_ROUND_NUMBER = 1;
 
-function game(string $message, array $questions, array $correctAnswers)
+/**
+ * @param array<mixed> $questions
+ * @param array<mixed> $correctAnswers
+ */
+function game(string $message, array $questions, array $correctAnswers): bool
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
@@ -30,4 +34,5 @@ function game(string $message, array $questions, array $correctAnswers)
             line("Congratulations, %s!", $name);
         }
     }
+    return true;
 }

@@ -9,7 +9,7 @@ function checkIfEven(int $number): bool
     return $number % 2 === 0;
 }
 
-function brainEven()
+function brainEven(): null
 {
     $message = 'Answer "yes" if the number is even, otherwise answer "no".';
     $questions = [];
@@ -20,4 +20,5 @@ function brainEven()
         $correctAnswers[$i] = checkIfEven($number) ? 'yes' : 'no';
     }
     Engine\game($message, $questions, $correctAnswers);
+    return null;
 }

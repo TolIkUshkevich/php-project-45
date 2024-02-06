@@ -22,7 +22,7 @@ function getMaxDivider(int $firstNumber, int $secondNumber): int
     return $maxDivider;
 }
 
-function brainGcd()
+function brainGcd(): null
 {
     $message = "Find the greatest common divisor of given numbers.";
     $questions = [];
@@ -34,4 +34,5 @@ function brainGcd()
         $correctAnswers[$i] = getMaxDivider($firstNumber, $secondNumber);
     }
     Engine\game($message, $questions, $correctAnswers);
+    return null;
 }

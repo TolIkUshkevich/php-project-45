@@ -4,7 +4,7 @@ namespace BrainGames\Games\BrainProgression;
 
 use BrainGames\Engine;
 
-function brainProgression()
+function brainProgression(): null
 {
     $message = "What number is missing in the progression?";
     $questions = [];
@@ -22,4 +22,5 @@ function brainProgression()
         $questions[$i] = implode(' ', $progression);
     }
     Engine\game($message, $questions, $correctAnswers);
+    return null;
 }
