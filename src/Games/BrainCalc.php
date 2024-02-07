@@ -18,10 +18,7 @@ function brainCalc(): void
     for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
         $firstNumber = rand(1, 20);
         $secondNumber = rand(1, 20);
-<<<<<<< HEAD
         $symbolNumber = array_rand($symbols);
-=======
->>>>>>> refs/remotes/origin/main
         $questions[$i] = "{$firstNumber} {$symbols[$symbolNumber]} {$secondNumber}";
         switch ($symbolNumber) {
             case 0:
