@@ -11,23 +11,28 @@ function brainCalc(): void
     $correctAnswers = [];
 
     $symbols = [
-        1 => '+',
-        2 => '-',
-        3 => '*'
+        '+',
+        '-',
+        '*'
     ];
     for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
         $firstNumber = rand(1, 20);
         $secondNumber = rand(1, 20);
+<<<<<<< HEAD
         $symbolNumber = array_rand($symbols);
+=======
+        $symbolNumber = array_rand($symbols, 1);
+        echo $secondNumber;
+>>>>>>> refs/remotes/origin/main
         $questions[$i] = "{$firstNumber} {$symbols[$symbolNumber]} {$secondNumber}";
         switch ($symbolNumber) {
-            case 1:
+            case 0:
                 $correctAnswers[$i] = $firstNumber + $secondNumber;
                 break;
-            case 2:
+            case 1:
                 $correctAnswers[$i] = $firstNumber - $secondNumber;
                 break;
-            case 3:
+            case 2:
                 $correctAnswers[$i] = $firstNumber * $secondNumber;
                 break;
         }
