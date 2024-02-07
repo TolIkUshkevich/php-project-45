@@ -21,8 +21,6 @@ function brainCalc(): void
 <<<<<<< HEAD
         $symbolNumber = array_rand($symbols);
 =======
-        $symbolNumber = array_rand($symbols, 1);
-        echo $secondNumber;
 >>>>>>> refs/remotes/origin/main
         $questions[$i] = "{$firstNumber} {$symbols[$symbolNumber]} {$secondNumber}";
         switch ($symbolNumber) {
