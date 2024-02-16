@@ -6,7 +6,7 @@ use BrainGames\Engine;
 
 const MAX_POSSIBLE_GNERATED_NUMBER = 20;
 
-function doOperation(int $firstNumber,int $secondNumber,int $symbolNumber): int{
+function calculate(int $firstNumber,int $secondNumber,int $symbolNumber): int{
     $result = 0;
     switch ($symbolNumber) {
         case 0:
@@ -26,7 +26,6 @@ function brainCalc(): void
 {
     $message = 'What is the result of the expression?';
     $questionsAndAnswers = [];
-    // $correctAnswers = [];
 
     $symbols = [
         '+',
@@ -37,8 +36,7 @@ function brainCalc(): void
         $firstNumber = rand(Engine\EVERY_GAME_MIN_NUMBER, MAX_POSSIBLE_GNERATED_NUMBER);
         $secondNumber = rand(Engine\EVERY_GAME_MIN_NUMBER, MAX_POSSIBLE_GNERATED_NUMBER);
         $symbolNumber = array_rand($symbols);
-        $questionsAndAnswers[$i] = ["question" => "{$firstNumber} {$symbols[$symbolNumber]} {$secondNumber}", "answer" => doOperation($firstNumber, $secondNumber, $symbolNumber)];
-        // $correctAnswers[$i] = doOperation($firstNumber, $secondNumber, $symbolNumber);
+        $questionsAndAnswers[$i] = ["question" => "{$firstNumber} {$symbols[$symbolNumber]} {$secondNumber}", "answer" => calculate($firstNumber, $secondNumber, $symbolNumber)];
     }
     Engine\runGame($message, $questionsAndAnswers);
 }

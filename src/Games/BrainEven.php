@@ -14,12 +14,10 @@ function isEven(int $number): bool
 function brainEven(): void
 {
     $message = 'Answer "yes" if the number is even, otherwise answer "no".';
-    $questions = [];
-    $correctAnswers = [];
+    $questionsAndAnswers = [];
     for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
         $number = rand(Engine\EVERY_GAME_MIN_NUMBER, MAX_POSSIBLE_GNERATED_NUMBER);
-        $questions[$i] = $number;
-        $correctAnswers[$i] = isEven($number) ? 'yes' : 'no';
+        $questionsAndAnswers[$i] = ["question" => $number, "answer" => isEven($number) ? 'yes' : 'no'];
     }
-    Engine\runGame($message, $questions, $correctAnswers);
+    Engine\runGame($message, $questionsAndAnswers);
 }
