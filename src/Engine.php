@@ -19,7 +19,7 @@ const EVERY_GAME_MIN_NUMBER = 1;
  }
 
  function getAnswer($array, $counter){
-    return $array[$counter]["answer"];
+    return strval($array[$counter]["answer"]);
  }
 
 function runGame(string $message, array $questionsAndAnswers): void
@@ -32,7 +32,7 @@ function runGame(string $message, array $questionsAndAnswers): void
         $question = getQuestion($questionsAndAnswers, $i);
         $correctAnswer = getAnswer($questionsAndAnswers, $i);
         line("Question: {$question}");
-        $answer = intval(prompt('Your answer'));
+        $answer = prompt('Your answer');
         if ($answer !== $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
             line("Let's try again, %s!", $name);
