@@ -6,7 +6,8 @@ use BrainGames\Engine;
 
 const MAX_POSSIBLE_GNERATED_NUMBER = 20;
 
-function calculate(int $firstNumber,int $secondNumber,int $symbolNumber): int{
+function calculate(int $firstNumber, int $secondNumber, int $symbolNumber): int
+{
     $result = 0;
     switch ($symbolNumber) {
         case 0:

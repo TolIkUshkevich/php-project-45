@@ -14,18 +14,20 @@ const EVERY_GAME_MIN_NUMBER = 1;
  * @param int $counter
  */
 
- function getQuestion(array $array, int $counter): mixed{
+function getQuestion(array $array, int $counter): mixed
+{
     return $array[$counter]["question"];
- }
+}
 
  /**
  * @param array<mixed> $array
  * @param int $counter
  */
 
- function getAnswer(array $array, int $counter): string{
+function getAnswer(array $array, int $counter): string
+{
     return strval($array[$counter]["answer"]);
- }
+}
 
  /**
  * @param array<mixed> $questionsAndAnswers
