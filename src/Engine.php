@@ -9,18 +9,27 @@ const GAME_ROUNDS_NUMBER = 3;
 const FIRST_ROUND_NUMBER = 1;
 const EVERY_GAME_MIN_NUMBER = 1;
 
-/**
- * @param array<mixed> $questions
- * @param array<mixed> $correctAnswers
+ /**
+ * @param array<mixed> $array
+ * @param int $counter
  */
 
- function getQuestion($array, $counter){
+ function getQuestion(array $array, int $counter): mixed{
     return $array[$counter]["question"];
  }
 
- function getAnswer($array, $counter){
+ /**
+ * @param array<mixed> $array
+ * @param int $counter
+ */
+
+ function getAnswer(array $array, int $counter): string{
     return strval($array[$counter]["answer"]);
  }
+
+ /**
+ * @param array<mixed> $questionsAndAnswers
+ */
 
 function runGame(string $message, array $questionsAndAnswers): void
 {

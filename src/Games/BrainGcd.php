@@ -21,7 +21,7 @@ function getMaxDivider(int $firstNumber, int $secondNumber): int
             $maxDivider = $i;
         }
     }
-    return "{$maxDivider}";
+    return $maxDivider;
 }
 
 function brainGcd(): void
