@@ -50,7 +50,7 @@ function runGame(string $message, array $questionsAndAnswers): void
             return;
         }
 
-        line("Correct!");        
+        line("Correct!");
     }
     line("Congratulations, %s!", $name);
 }
