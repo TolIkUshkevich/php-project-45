@@ -4,6 +4,8 @@ namespace BrainGames\Games\BrainGcd;
 
 use BrainGames\Engine;
 
+const MAX_POSSIBLE_GNERATED_NUMBER = 25;
+
 function getMaxDivider(int $firstNumber, int $secondNumber): int
 {
     $maxDivider = 0;
@@ -22,17 +24,16 @@ function getMaxDivider(int $firstNumber, int $secondNumber): int
     return $maxDivider;
 }
 
-function brainGcd(): null
+function brainGcd(): void
 {
     $message = "Find the greatest common divisor of given numbers.";
     $questions = [];
     $correctAnswers = [];
     for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
-        $firstNumber = rand(1, 25);
-        $secondNumber = rand(1, 25);
+        $firstNumber = rand(Engine\EVERY_GAME_MIN_NUMBER, MAX_POSSIBLE_GNERATED_NUMBER);
+        $secondNumber = rand(Engine\EVERY_GAME_MIN_NUMBER, MAX_POSSIBLE_GNERATED_NUMBER);
         $questions[$i] = "{$firstNumber} {$secondNumber}";
         $correctAnswers[$i] = getMaxDivider($firstNumber, $secondNumber);
     }
-    Engine\game($message, $questions, $correctAnswers);
-    return null;
+    Engine\runGame($message, $questions, $correctAnswers);
 }

@@ -7,12 +7,13 @@ use function cli\prompt;
 
 const GAME_ROUNDS_NUMBER = 3;
 const FIRST_ROUND_NUMBER = 1;
+const EVERY_GAME_MIN_NUMBER = 1;
 
 /**
  * @param array<mixed> $questions
  * @param array<mixed> $correctAnswers
  */
-function game(string $message, array $questions, array $correctAnswers): bool
+function runGame(string $message, array $questions, array $correctAnswers): void
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
@@ -23,16 +24,13 @@ function game(string $message, array $questions, array $correctAnswers): bool
         line("Question: {$question}");
         $answer = prompt('Your answer');
         $correctAnswer = $correctAnswers[$i];
-        if ($answer != $correctAnswer) {
+        if ($answer !== $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
             line("Let's try again, %s!", $name);
-            break;
+            return;
         }
 
-        line("Correct!");
-        if ($i === GAME_ROUNDS_NUMBER) {
-            line("Congratulations, %s!", $name);
-        }
+        line("Correct!");        
     }
-    return true;
+    line("Congratulations, %s!", $name);
 }

@@ -4,11 +4,29 @@ namespace BrainGames\Games\BrainCalc;
 
 use BrainGames\Engine;
 
+const MAX_POSSIBLE_GNERATED_NUMBER = 20;
+
+function doOperation(int $firstNumber,int $secondNumber,int $symbolNumber): int{
+    $result = 0;
+    switch ($symbolNumber) {
+        case 0:
+            $result = $firstNumber + $secondNumber;
+            break;
+        case 1:
+            $result = $firstNumber - $secondNumber;
+            break;
+        case 2:
+            $result = $firstNumber * $secondNumber;
+            break;
+    }
+    return $result;
+}
+
 function brainCalc(): void
 {
     $message = 'What is the result of the expression?';
-    $questions = [];
-    $correctAnswers = [];
+    $questionsAndAnswers = [];
+    // $correctAnswers = [];
 
     $symbols = [
         '+',
@@ -16,21 +34,11 @@ function brainCalc(): void
         '*'
     ];
     for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
-        $firstNumber = rand(1, 20);
-        $secondNumber = rand(1, 20);
+        $firstNumber = rand(Engine\EVERY_GAME_MIN_NUMBER, MAX_POSSIBLE_GNERATED_NUMBER);
+        $secondNumber = rand(Engine\EVERY_GAME_MIN_NUMBER, MAX_POSSIBLE_GNERATED_NUMBER);
         $symbolNumber = array_rand($symbols);
-        $questions[$i] = "{$firstNumber} {$symbols[$symbolNumber]} {$secondNumber}";
-        switch ($symbolNumber) {
-            case 0:
-                $correctAnswers[$i] = $firstNumber + $secondNumber;
-                break;
-            case 1:
-                $correctAnswers[$i] = $firstNumber - $secondNumber;
-                break;
-            case 2:
-                $correctAnswers[$i] = $firstNumber * $secondNumber;
-                break;
-        }
+        $questionsAndAnswers[$i] = ["question" => "{$firstNumber} {$symbols[$symbolNumber]} {$secondNumber}", "answer" => doOperation($firstNumber, $secondNumber, $symbolNumber)];
+        // $correctAnswers[$i] = doOperation($firstNumber, $secondNumber, $symbolNumber);
     }
-    Engine\game($message, $questions, $correctAnswers);
+    Engine\runGame($message, $questionsAndAnswers);
 }

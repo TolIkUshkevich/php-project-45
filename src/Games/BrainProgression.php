@@ -4,23 +4,30 @@ namespace BrainGames\Games\BrainProgression;
 
 use BrainGames\Engine;
 
+const LENGTH_OF_PROGRESSION = 10;
+const PROGRESSION_MAX_FIRST_NUMBER = 20;
+const MIN_INTERVAL = 1;
+const MAX_INTERVAL = 5;
+const MIN_MISSED_NUMBER_INDEX = 0;
+const MAX_MISSED_NUMBER_INDEX = 9;
+
 function brainProgression(): null
 {
     $message = "What number is missing in the progression?";
     $questions = [];
     $correctAnswers = [];
     for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
-        $progressionIndex = rand(1, 5);
-        $missedNumberIndex = rand(0, 9);
-        $startNumber = rand(0, 20);
+        $progressionIndex = rand(MIN_INTERVAL, MAX_INTERVAL);
+        $missedNumberIndex = rand(MIN_MISSED_NUMBER_INDEX, MAX_MISSED_NUMBER_INDEX);
+        $startNumber = rand(engine\EVERY_GAME_MIN_NUMBER, PROGRESSION_MAX_FIRST_NUMBER);
         $progression = [];
-        for ($j = 0; $j < 10; $j++) {
+        for ($j = 0; $j < LENGTH_OF_PROGRESSION; $j++) {
             $progression[] = $progressionIndex * $j + $startNumber;
         }
         $correctAnswers[$i] = $progression[$missedNumberIndex];
         $progression[$missedNumberIndex] = '..';
         $questions[$i] = implode(' ', $progression);
     }
-    Engine\game($message, $questions, $correctAnswers);
+    Engine\runGame($message, $questions, $correctAnswers);
     return null;
 }

@@ -5,12 +5,13 @@ namespace BrainGames\Games\BrainPrime;
 use BrainGames\Engine;
 
 const FIRST_PRIME_NUMBER = 2;
-function ifNumberIsPrime(int $inputNumber): bool
+const MAX_POSSIBLE_GENERATED_NUMBER = 100;
+function isPrime(int $inputNumber): bool
 {
     $arrayOfPrimeNumbers = [FIRST_PRIME_NUMBER];
     $counter = 0;
     for ($i = FIRST_PRIME_NUMBER; $i <= $inputNumber; $i++) {
-        for ($j = FIRST_PRIME_NUMBER; $j <= 100; $j++) {
+        for ($j = FIRST_PRIME_NUMBER; $j <= MAX_POSSIBLE_GENERETED_NUMBER; $j++) {
             if ($i % $j === 0) {
                 $counter++;
             }
@@ -23,16 +24,15 @@ function ifNumberIsPrime(int $inputNumber): bool
     return in_array($inputNumber, $arrayOfPrimeNumbers, true);
 }
 
-function brainPrime(): null
+function brainPrime(): void
 {
     $message = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $questions = [];
     $correctAnswers = [];
     for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
-        $number = rand(FIRST_PRIME_NUMBER, 100);
+        $number = rand(FIRST_PRIME_NUMBER, MAX_POSSIBLE_GENERATED_NUMBER);
         $questions[$i] = $number;
-        $correctAnswers[$i] = ifNumberIsPrime($number) ? 'yes' : 'no';
+        $correctAnswers[$i] = isPrime($number) ? 'yes' : 'no';
     }
-    Engine\game($message, $questions, $correctAnswers);
-    return null;
+    Engine\runGame($message, $questions, $correctAnswers);
 }
