@@ -9,10 +9,12 @@ Play, enjoy, count.
 
 To start using project, enter: make install
 
+<<<<<<< HEAD
 To start any game, enter: brain-even, brain-calc, brain-gcd, brain-progression or brain-prime accordingly
 
 You'll be given a discription and a question. 
 So, your task is to answer question, enjoy!
+
 #### brain-even game:  
 [![asciicast](https://asciinema.org/a/CHaHgxNmZMFinMpzFdar7F0Kj.svg)](https://asciinema.org/a/CHaHgxNmZMFinMpzFdar7F0Kj)
 
