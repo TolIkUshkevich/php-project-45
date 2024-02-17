@@ -7,9 +7,9 @@
 This is a selection of simple mathematics games.
 Play, enjoy, count.
 
-To start using project make: make install
+To start using project, enter: make install
 
-to start any game, type: brain-even, brain-calc, brain-gcd, brain-progression or brain-prime accordingly
+to start any game, enter: brain-even, brain-calc, brain-gcd, brain-progression or brain-prime accordingly
 #### brain-even game:  
 [![asciicast](https://asciinema.org/a/CHaHgxNmZMFinMpzFdar7F0Kj.svg)](https://asciinema.org/a/CHaHgxNmZMFinMpzFdar7F0Kj)
 
