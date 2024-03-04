@@ -18,7 +18,7 @@ function getArrayOfPrimeNumbers(): array
         $divider = $arrayOfNumbers[$counterOfNumbers];
         foreach ($arrayOfNumbers as $number) {
             if ($number % $divider === 0 && $number !== $divider) {
-                unset($arrayOfNumbers[array_search($number, $arrayOfNumbers)]);
+                unset($arrayOfNumbers[array_search($number, $arrayOfNumbers, true)]);
                 $arrayOfNumbers = array_values($arrayOfNumbers);
             }
         }
@@ -36,7 +36,7 @@ function brainPrime(): void
         $number = rand(FIRST_PRIME_NUMBER, MAX_POSSIBLE_GENERATED_NUMBER);
         $questionsAndAnswers[$i] = [
             "question" => sprintf("%s", $number),
-            "answer" => in_array($number, $primeNumbers) ? "yes" : "no"];
+            "answer" => in_array($number, $primeNumbers, true) ? "yes" : "no"];
     }
     Engine\runGame($message, $questionsAndAnswers);
 }
