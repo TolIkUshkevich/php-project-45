@@ -4,19 +4,19 @@ namespace BrainGames\Games\BrainCalc;
 
 use BrainGames\Engine;
 
-const MAX_POSSIBLE_GNERATED_NUMBER = 20;
+const MAX_POSSIBLE_GENERATED_NUMBER = 20;
 
-function calculate(int $firstNumber, int $secondNumber, int $symbolNumber): int
+function calculate(int $firstNumber, int $secondNumber, string $symbol): int
 {
     $result = 0;
-    switch ($symbolNumber) {
-        case 0:
+    switch ($symbol) {
+        case '+':
             $result = $firstNumber + $secondNumber;
             break;
-        case 1:
+        case '-':
             $result = $firstNumber - $secondNumber;
             break;
-        case 2:
+        case '*':
             $result = $firstNumber * $secondNumber;
             break;
     }
@@ -34,10 +34,12 @@ function brainCalc(): void
         '*'
     ];
     for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
-        $firstNumber = rand(Engine\EVERY_GAME_MIN_NUMBER, MAX_POSSIBLE_GNERATED_NUMBER);
-        $secondNumber = rand(Engine\EVERY_GAME_MIN_NUMBER, MAX_POSSIBLE_GNERATED_NUMBER);
+        $firstNumber = rand(Engine\EVERY_GAME_MIN_POSSIBLE_NUMBER, MAX_POSSIBLE_GENERATED_NUMBER);
+        $secondNumber = rand(Engine\EVERY_GAME_MIN_POSSIBLE_NUMBER, MAX_POSSIBLE_GENERATED_NUMBER);
         $symbolNumber = array_rand($symbols);
-        $questionsAndAnswers[$i] = ["question" => "{$firstNumber} {$symbols[$symbolNumber]} {$secondNumber}", "answer" => calculate($firstNumber, $secondNumber, $symbolNumber)];
+        $questionsAndAnswers[$i] = [
+            "question" => sprintf("%s %s %s", $firstNumber, $symbols[$symbolNumber], $secondNumber),
+            "answer" => sprintf("%s", calculate($firstNumber, $secondNumber, $symbols[$symbolNumber]))];
     }
     Engine\runGame($message, $questionsAndAnswers);
 }

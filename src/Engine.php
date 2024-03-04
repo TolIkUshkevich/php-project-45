@@ -7,16 +7,16 @@ use function cli\prompt;
 
 const GAME_ROUNDS_NUMBER = 3;
 const FIRST_ROUND_NUMBER = 1;
-const EVERY_GAME_MIN_NUMBER = 1;
+const EVERY_GAME_MIN_POSSIBLE_NUMBER = 1;
 
  /**
- * @param array<mixed> $array
- * @param int $counter
+ * @param array<mixed> $questionsAndAnswers
+ * @param int $questionNumber
  */
 
-function getQuestion(array $array, int $counter): mixed
+function getQuestion(array $questionsAndAnswers, int $questionNumber): string
 {
-    return $array[$counter]["question"];
+    return $questionsAndAnswers[$questionNumber]["question"];
 }
 
  /**
@@ -24,9 +24,9 @@ function getQuestion(array $array, int $counter): mixed
  * @param int $counter
  */
 
-function getAnswer(array $array, int $counter): string
+function getAnswer(array $questionsAndAnswers, int $answerNumber): string
 {
-    return strval($array[$counter]["answer"]);
+    return $questionsAndAnswers[$answerNumber]["answer"];
 }
 
  /**

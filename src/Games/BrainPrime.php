@@ -7,31 +7,36 @@ use BrainGames\Engine;
 const FIRST_PRIME_NUMBER = 2;
 const MAX_POSSIBLE_GENERATED_NUMBER = 100;
 
-function isPrime(int $inputNumber): bool
+/**
+ * @return array<int> $arrayOfNumbers
+ */
+function getArrayOfPrimeNumbers(): array
 {
-    $arrayOfPrimeNumbers = [FIRST_PRIME_NUMBER];
-    $counter = 0;
-    for ($i = FIRST_PRIME_NUMBER; $i <= $inputNumber; $i++) {
-        for ($j = FIRST_PRIME_NUMBER; $j <= MAX_POSSIBLE_GENERATED_NUMBER; $j++) {
-            if ($i % $j === 0) {
-                $counter++;
+    $arrayOfNumbers = range(FIRST_PRIME_NUMBER, MAX_POSSIBLE_GENERATED_NUMBER);
+    $counterOfNumbers = 0;
+    while (array_key_exists($counterOfNumbers, $arrayOfNumbers)) {
+        $divider = $arrayOfNumbers[$counterOfNumbers];
+        foreach ($arrayOfNumbers as $number){
+            if ($number % $divider === 0 && $number !== $divider) {
+                unset($arrayOfNumbers[array_search($number, $arrayOfNumbers)]);
+                $arrayOfNumbers = array_values($arrayOfNumbers);
             }
         }
-        if ($counter === 1) {
-            $arrayOfPrimeNumbers[] = $i;
-        }
-        $counter = 0;
+        $counterOfNumbers++;
     }
-    return in_array($inputNumber, $arrayOfPrimeNumbers, true);
+    return $arrayOfNumbers;
 }
 
 function brainPrime(): void
 {
     $message = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $questionsAndAnswers = [];
+    $primeNumbers = getArrayOfPrimeNumbers();
     for ($i = Engine\FIRST_ROUND_NUMBER; $i <= Engine\GAME_ROUNDS_NUMBER; $i++) {
         $number = rand(FIRST_PRIME_NUMBER, MAX_POSSIBLE_GENERATED_NUMBER);
-        $questionsAndAnswers[$i] = ["question" => $number, "answer" => isPrime($number) ? 'yes' : 'no'];
+        $questionsAndAnswers[$i] = [
+            "question" => sprintf("%s", $number),
+            "answer" => in_array($number, $primeNumbers) ? "yes" : "no"];
     }
     Engine\runGame($message, $questionsAndAnswers);
 }
