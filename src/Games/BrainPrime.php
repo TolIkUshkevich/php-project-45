@@ -16,7 +16,7 @@ function getArrayOfPrimeNumbers(): array
     $counterOfNumbers = 0;
     while (array_key_exists($counterOfNumbers, $arrayOfNumbers)) {
         $divider = $arrayOfNumbers[$counterOfNumbers];
-        foreach ($arrayOfNumbers as $number){
+        foreach ($arrayOfNumbers as $number) {
             if ($number % $divider === 0 && $number !== $divider) {
                 unset($arrayOfNumbers[array_search($number, $arrayOfNumbers)]);
                 $arrayOfNumbers = array_values($arrayOfNumbers);
