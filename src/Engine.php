@@ -20,8 +20,8 @@ function getQuestion(array $questionsAndAnswers, int $questionNumber): string
 }
 
  /**
- * @param array<mixed> $array
- * @param int $counter
+ * @param array<mixed> $questionsAndAnswers
+ * @param int $answerNumber
  */
 
 function getAnswer(array $questionsAndAnswers, int $answerNumber): string
