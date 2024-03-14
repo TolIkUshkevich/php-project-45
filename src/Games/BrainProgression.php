@@ -24,7 +24,7 @@ function brainProgression(): void
         $progression[$missedNumberIndex] = '..';
         $questionsAndAnswers[$i] = [
             "question" => implode(' ', $progression),
-            "answer" => sprintf("%s", $correctAnswer)];
+            "answer" => (string)$correctAnswer];
     }
     Engine\runGame($message, $questionsAndAnswers);
 }

@@ -10,7 +10,7 @@ const FIRST_ROUND_NUMBER = 1;
 const EVERY_GAME_MIN_POSSIBLE_NUMBER = 1;
 
  /**
- * @param array<mixed> $questionsAndAnswers
+ * @param array<int, array<string, string>> $questionsAndAnswers
  * @param int $questionNumber
  */
 
@@ -20,7 +20,7 @@ function getQuestion(array $questionsAndAnswers, int $questionNumber): string
 }
 
  /**
- * @param array<mixed> $questionsAndAnswers
+ * @param array<int, array<string, string>> $questionsAndAnswers
  * @param int $answerNumber
  */
 
@@ -30,7 +30,7 @@ function getAnswer(array $questionsAndAnswers, int $answerNumber): string
 }
 
  /**
- * @param array<mixed> $questionsAndAnswers
+ * @param array<int, array<string, string>> $questionsAndAnswers
  */
 
 function runGame(string $message, array $questionsAndAnswers): void
