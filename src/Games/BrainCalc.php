@@ -2,7 +2,6 @@
 
 namespace BrainGames\Games\BrainCalc;
 
-use _PHPStan_11268e5ee\Nette\Neon\Exception;
 use BrainGames\Engine;
 
 const MAX_POSSIBLE_GENERATED_NUMBER = 20;
@@ -21,7 +20,7 @@ function calculate(int $firstNumber, int $secondNumber, string $operator): int
             $result = $firstNumber * $secondNumber;
             break;
         default:
-            throw new Exception("Unknown operator '{$operator}'.");
+            throw new \Exception("Unknown operator '{$operator}'.");
     }
     return $result;
 }
